@@ -1,0 +1,43 @@
+%Iqbal Luqmanul Hakim 
+%082111733063
+%Contoh soal 1
+clc; clear all;
+x = [0 1 2 2.5 3];
+y = [2.9 3.7 4.1 4.4 5];
+
+jumx = 0;
+jumxx = 0;
+jumy = 0;
+jumxy = 0;
+
+for i = 1:5
+    jumx = jumx + x(i);
+    jumxx = jumxx + (x(i) ^ 2);
+    jumy = jumy + y(i);
+    jumxy = jumxy + (y(i) * x(i));
+end
+
+A = [5 jumx; jumx jumxx];
+B = [jumy; jumxy];
+
+C = inv(A) * B;
+
+disp('Tabel Nilai:');
+disp('--------------------------------------');
+disp('   x     |    y    |   xy   |   x^2  ');
+disp('--------------------------------------');
+for i = 1:5
+    disp([x(i), y(i), x(i) * y(i), x(i) ^ 2]);
+end
+disp('--------------------------------------');
+disp(['JumX  = ', num2str(jumx)]);
+disp(['JumXY = ', num2str(jumxy)]);
+
+for i = 1:5
+    f2(i) = C(2) * x(i) + C(1);
+end
+
+plot(x, f2, 'b', x, y, 'o');
+title('Regresi Linear');
+
+
