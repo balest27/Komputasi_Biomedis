@@ -1,5 +1,6 @@
 % Iqbal Luqmanul Hakim 
 % 082111733063
+%Tugas no 1
 clc; clear all;
 x = [0.5 1.0 1.5 2.0 2.5];
 y = [0.49 1.60 3.36 6.44 10.16];
